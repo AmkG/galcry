@@ -1,5 +1,5 @@
 /*
-src/main.c - Main source for Galactic Crisis
+src/gui/main.c - Main driver for Galactic Crisis GUI
 Copyright (C) 2013 Alan Manuel K. Gloria
 
 This program is free software: you can redistribute it and/or modify

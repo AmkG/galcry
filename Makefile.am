@@ -14,11 +14,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-bin_PROGRAMS = galcry
+bin_PROGRAMS = galcry-backend galcry-gui
 
-galcry_SOURCES =\
-  src/main.c
+galcry_backend_SOURCES =\
+  src/backend/main.c
 
+galcry_gui_SOURCES =\
+  src/gui/main.c
 
 # needed support
 ACLOCAL_AMFLAGS = -I m4

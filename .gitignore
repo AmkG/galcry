@@ -22,7 +22,8 @@ config.h
 stamp-*
 
 # by Makefile
-galcry
+galcry-backend
+galcry-gui
 *.o
 .dirstamp
 

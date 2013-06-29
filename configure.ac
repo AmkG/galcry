@@ -17,7 +17,7 @@
 
 AC_PREREQ([2.68])
 AC_INIT([GalCry], [0.1A], [almkglor@gmail.com])
-AC_CONFIG_SRCDIR([src/main.c])
+AC_CONFIG_SRCDIR([src/backend/main.c])
 AC_CONFIG_AUX_DIR([auxdir])
 AC_CONFIG_HEADERS([inc/config.h])
 AC_CONFIG_LIBOBJ_DIR([libobj])
