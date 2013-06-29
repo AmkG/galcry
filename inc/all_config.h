@@ -22,4 +22,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include"config.h"
 #endif
 
+/*-----------------------------------------------------------------------------
+Boolean
+-----------------------------------------------------------------------------*/
+
+#if HAVE_STDBOOL_H
+# include<stdbool.h>
+#else /* !HAVE_STDBOOL_H */
+
+# if !HAVE__BOOL
+#  if defined(__cplusplus)
+typedef bool _Bool;
+#  else /* !defined(__cplusplus) */
+#   define _Bool unsigned char
+#  endif /* !defined(__cplusplus) */
+# endif /* !HAVE__BOOL */
+
+# define bool _Bool
+# define false 0
+# define true 1
+
+#endif /* !HAVE_STDBOOL_H */
+
 #endif
