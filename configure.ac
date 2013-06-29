@@ -20,6 +20,7 @@ AC_INIT([GalCry], [0.1A], [almkglor@gmail.com])
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_AUX_DIR([auxdir])
 AC_CONFIG_HEADERS([inc/config.h])
+AC_CONFIG_LIBOBJ_DIR([libobj])
 AM_INIT_AUTOMAKE([gnu check-news subdir-objects std-options silent-rules])
 
 # Checks for programs.
@@ -33,6 +34,7 @@ AC_PROG_CC
 AM_PROG_CC_C_O
 
 # Checks for library functions.
+AC_FUNC_MALLOC
 
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
