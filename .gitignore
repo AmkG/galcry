@@ -1,0 +1,34 @@
+# by automake
+Makefile.in
+
+# by automake -a
+auxdir
+
+# by autoheader
+config.h.in
+
+# by aclocal
+aclocal.m4
+
+# by autoconf
+configure
+
+# by configure
+Makefile
+config.status
+config.log
+config.h
+.deps
+stamp-*
+
+# by Makefile
+galcry
+*.o
+.dirstamp
+
+# by autom4te
+autom4te.cache
+
+# backup files and other minutae
+*~
+.*.swp
