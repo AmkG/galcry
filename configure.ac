@@ -32,6 +32,7 @@ AC_PROG_CC
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_HEADER_STDBOOL
+AC_TYPE_SIZE_T
 AM_PROG_CC_C_O
 
 # Checks for library functions.
