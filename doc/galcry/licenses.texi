@@ -1,0 +1,22 @@
+@node Licenses
+@appendix Licenses
+
+This chapter includes the GNU Free Documentation License,
+which is the license for this document, as well as the
+GNU General Public License, which is the license for the
+program.
+
+@menu
+* GNU Free Documentation License::
+* GNU General Public License::
+@end menu
+
+@node GNU Free Documentation License
+@appendixsec GNU Free Documentation License
+
+@include galcry/fdl.texi
+
+@node GNU General Public License
+@appendixsec GNU General Public License
+
+@include galcry/gpl.texi

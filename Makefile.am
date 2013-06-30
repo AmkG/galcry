@@ -22,5 +22,12 @@ galcry_backend_SOURCES =\
 galcry_gui_SOURCES =\
   src/gui/main.c
 
+# documentation
+info_TEXINFOS = doc/galcry.texi
+doc_galcry_TEXINFOS = \
+  doc/galcry/intro.texi \
+  doc/galcry/licenses.texi \
+  doc/galcry/fdl.texi
+
 # needed support
 ACLOCAL_AMFLAGS = -I m4

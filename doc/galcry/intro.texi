@@ -1,0 +1,84 @@
+@node Introduction
+@chapter Introduction
+@cindex Introduction
+
+Galactic Crisis is a game of politics in a galactic
+setting, played in a bipolar universe where two galactic
+superpowers with incompatible political structures are
+forced into an uneasy peace.
+
+@menu
+* Story ::                        Background story.
+@end menu
+
+@node Story
+@section Story
+@cindex Story
+
+(the below is an excerpt from the book
+``A@.P@.D@.: How I Learned to Stop Worrying and Prefer
+Galactic Crises'')
+
+@quotation
+A@.P@.D@. --- the name, rightly, evokes
+terror in the stomachs of most readers.  The A@.P@.D@. bomb
+--- or Antimatter-Probability Drive bomb --- is a
+remotely-controllable bomb capable of
+triggering a nova in any star in the galaxy.
+
+At the core of this terrifying device is a small amount of
+antimatter suspended in a probability drive.
+A probability drive
+can exchange --- with a large but not absolutely certain
+probability --- its contents with a similarly-sized volume
+in space, in a single quantum of time.  Swap a cubic meter
+of a star's core material with mostly empty space and a few
+grams of antimatter, and the resulting energy released by
+the antimatter-matter annihilation can trigger the star
+into nova.
+
+Scatter several thousands of such bombs in deep space,
+targeted at your opponent's stars, with
+deadman triggers --- set them to go off if a
+particular signal does not reach them --- and you ensure
+that not even a first strike will be capable of reducing
+your retaliatory capability.
+
+Neutrality in the galactic stage is not an
+option.  Even if your stars are not targeted by another
+country's stockpile of A@.P@.D@.'s --- something you
+can never be certain of --- their existence in large
+quantities has side effects.  Novae are, in the grand
+scheme of things, commonplace events.  But several
+thousand novae occurring at the same time is not a
+common event; the best scientists can only speculate
+on what would happen, but most predict a complete
+disaster.
+
+Interestingly, there is only one other major application
+for probability drives.  It is not starship travel.
+The risk of a probability drive failure is
+significant enough to deter all but the most desperate
+or reckless of passengers.
+Instead, this other major
+application is the transmission
+of messages.  Transmit a simple radio transmitter
+sending a particular message via probability drive, and
+the occassional failure to transmit will simply be a
+minor operating cost.
+
+The two superpowers communicate almost solely by this
+method; many other commentators have observed the
+apparent irony in that the probability drive makes
+possible the complete annihilation of the galaxy,
+while at the same time allowing both superpowers to
+convince each other not to do so.
+
+I do not share this observation.
+
+Instead, I will show, in this book, that the weapon
+known as the A@.P@.D@. bomb is not a tool of war,
+but a tool of
+peace.
+@end quotation
+
