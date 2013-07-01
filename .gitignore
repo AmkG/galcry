@@ -26,6 +26,7 @@ galcry-backend
 galcry-gui
 *.o
 .dirstamp
+*.t2d
 
 # by autom4te
 autom4te.cache

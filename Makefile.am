@@ -27,7 +27,7 @@ SUBDIRS = ustr
 
 # ustr support
 LDADD = ustr/libustr.a
-CPPFLAGS = -I $(srcdir)/ustr
+AM_CPPFLAGS = -I $(srcdir)/ustr
 
 # documentation
 info_TEXINFOS = doc/galcry.texi
@@ -35,6 +35,8 @@ doc_galcry_TEXINFOS = \
   doc/galcry/intro.texi \
   doc/galcry/licenses.texi \
   doc/galcry/fdl.texi
+
+TEXI2DVI = texi2dvi --tidy
 
 # needed support
 ACLOCAL_AMFLAGS = -I m4
