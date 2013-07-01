@@ -25,6 +25,8 @@ AM_INIT_AUTOMAKE([gnu check-news subdir-objects std-options silent-rules])
 
 # Checks for programs.
 AC_PROG_CC
+AC_PROG_RANLIB
+AM_PROG_AR
 
 # Checks for libraries.
 
@@ -38,5 +40,5 @@ AM_PROG_CC_C_O
 # Checks for library functions.
 AC_FUNC_MALLOC
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile ustr/Makefile])
 AC_OUTPUT

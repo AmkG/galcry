@@ -17,6 +17,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include"all_config.h"
 
+#include"ustr.h"
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -105,6 +107,7 @@ static void
 command_loop (void)
 {
   char *cmd;
+  Ustr *ucmd;
   while (!quit_flag)
     {
       printf ("galcry> ");
@@ -114,10 +117,12 @@ command_loop (void)
 	  quit_flag = true;
 	  return;
 	}
+      ucmd = ustr_dup_cstr (cmd);
+      free (cmd);
 
       /* Divide into words.  */
       /* Search command list.  */
 
-      free (cmd);
+      ustr_free (ucmd);
     }
 }

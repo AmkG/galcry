@@ -1,4 +1,4 @@
-# Makefile.am - Compilation control file for Galactic Crisis
+# ustr/Makefile.am - Compilation control file to build ustr library.
 # Copyright (C) 2013 Alan Manuel K. Gloria
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,27 +14,24 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-bin_PROGRAMS = galcry-backend galcry-gui
+noinst_LIBRARIES = libustr.a
 
-galcry_backend_SOURCES =\
-  src/backend/main.c
+libustr_a_SOURCES = \
+  ustr-b-opt-code.c \
+  ustr-cmp-opt-code.c \
+  ustr-fmt-opt-code.c \
+  ustr-ins-opt-code.c \
+  ustr-io-opt-code.c \
+  ustr-main-opt-code.c \
+  ustr-parse-opt-code.c \
+  ustr-pool-opt-code.c \
+  ustr-replace-opt-code.c \
+  ustr-sc-opt-code.c \
+  ustr-set-opt-code.c \
+  ustr-split-opt-code.c \
+  ustr-spn-opt-code.c \
+  ustr-srch-opt-code.c \
+  ustr-sub-opt-code.c \
+  ustr-utf8-opt-code.c
 
-galcry_gui_SOURCES =\
-  src/gui/main.c
-
-# subdirectories
-SUBDIRS = ustr
-
-# ustr support
-LDADD = ustr/libustr.a
-CPPFLAGS = -I $(srcdir)/ustr
-
-# documentation
-info_TEXINFOS = doc/galcry.texi
-doc_galcry_TEXINFOS = \
-  doc/galcry/intro.texi \
-  doc/galcry/licenses.texi \
-  doc/galcry/fdl.texi
-
-# needed support
-ACLOCAL_AMFLAGS = -I m4
+EXTRA_DIST = COPYING LICENSE_LGPL LICENSE_BSD LICENSE_MIT
