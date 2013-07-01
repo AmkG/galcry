@@ -57,46 +57,31 @@ quit_command (int argc, char const **argv)
   quit_flag = true;
 }
 
-static char *
+static Ustr *
 get_line (void)
 {
-  char *rv;
-  unsigned int capacity;
-  unsigned int line_length;
+  Ustr *rv;
   int c;
+  char charc;
 
-  rv = 0;
-  capacity = 0;
-  line_length = 0;
+  rv = USTR_NULL;
 
   for (;;)
     {
       c = getchar ();
-      if (c == EOF && line_length == 0)
-	return 0;
+      if (c == EOF && rv == USTR_NULL)
+	return USTR_NULL;
+      charc = (char) c;
 
-      if (line_length + 1 >= capacity)
-	{
-	  unsigned int ncap = capacity + (capacity / 2) + 4;
-	  char *nrv = malloc (ncap);
-	  if (!nrv)
-	    abort ();
-	  if (rv)
-	    memcpy (nrv, rv, line_length);
-	  free (rv);
-	  capacity = ncap;
-	  rv = nrv;
-	}
+      if (rv == USTR_NULL)
+	rv = ustr_dup_cstr ("");
 
       if (c == '\n' || c == EOF)
-	{
-	  rv[line_length] = 0;
-	  break;
-	}
+	return rv;
       else
 	{
-	  rv[line_length] = (char) c;
-	  ++line_length;
+	  if (!ustr_add_buf (&rv, &charc, 1))
+	    abort ();
 	}
     }
 
@@ -106,23 +91,24 @@ get_line (void)
 static void
 command_loop (void)
 {
-  char *cmd;
-  Ustr *ucmd;
+  Ustr *cmd;
   while (!quit_flag)
     {
       printf ("galcry> ");
       cmd = get_line ();
-      if (!cmd)
+      if (cmd == USTR_NULL)
 	{
 	  quit_flag = true;
 	  return;
 	}
-      ucmd = ustr_dup_cstr (cmd);
-      free (cmd);
 
       /* Divide into words.  */
       /* Search command list.  */
 
-      ustr_free (ucmd);
+      /* For now echo the command.  */
+      if (!ustr_io_putfileline (&cmd, stdout))
+	abort ();
+
+      ustr_free (cmd);
     }
 }
