@@ -2,18 +2,31 @@
 @chapter Introduction
 @cindex Introduction
 
-Galactic Crisis is a game of politics in a galactic
+@dfn{Galactic Crisis} is a game of politics in a galactic
 setting, played in a bipolar universe where two galactic
 superpowers with incompatible political structures are
 forced into an uneasy peace.
 
+The invention of a terrifying bomb, capable of destroying
+entire suns and imbalancing the gravitic structure of the
+galaxy, prevents complete peace --- but also prevents
+total war.
+
+The two superpowers must tread carefully.  They cannot
+engage directly in combat with each other, for that risks
+the destruction of the galaxy.  But other, minor powers
+--- interplanetary nations, empires, coalitions, and the
+like --- can serve as pawns to hide the mastermind's
+hand.
+
 @menu
-* Story ::                        Background story.
+* A.P.D. ::                        The main technological achievement.
+* Galactic Politics ::             The two superpowers.
 @end menu
 
-@node Story
-@section Story
-@cindex Story
+@node A.P.D.
+@section A.P.D.
+@cindex A.P.D.
 
 (the below is an excerpt from the book
 ``A@.P@.D@.: How I Learned to Stop Worrying and Prefer
@@ -21,7 +34,7 @@ Galactic Crises'')
 
 @quotation
 A@.P@.D@. --- the name, rightly, evokes
-terror in the stomachs of most readers.  The A@.P@.D@. bomb
+terror in most readers.  The A@.P@.D@. bomb
 --- or Antimatter-Probability Drive bomb --- is a
 remotely-controllable bomb capable of
 triggering a nova in any star in the galaxy.
@@ -37,10 +50,13 @@ grams of antimatter, and the resulting energy released by
 the antimatter-matter annihilation can trigger the star
 into nova.
 
-Scatter several thousands of such bombs in deep space,
-targeted at your opponent's stars, with
-deadman triggers --- set them to go off if a
-particular signal does not reach them --- and you ensure
+Create several thousands of such bombs,
+targeted at your opponent's stars, to make your presence
+in the galactic stage credible.
+Scatter them in deep space, to make it next-to-impossible
+to find and destroy them.
+Program them to trigger if a
+particular signal does not reach them, and you ensure
 that not even a first strike will be capable of reducing
 your retaliatory capability.
 
@@ -74,7 +90,8 @@ possible the complete annihilation of the galaxy,
 while at the same time allowing both superpowers to
 convince each other not to do so.
 
-I do not share this observation.
+I do not share this observation.  There is no irony in
+the second major application of the probability drive.
 
 Instead, I will show, in this book, that the weapon
 known as the A@.P@.D@. bomb is not a tool of war,
@@ -82,3 +99,102 @@ but a tool of
 peace.
 @end quotation
 
+@node Galactic Politics
+@section Galactic Politics
+@cindex Galactic Politics
+@cindex Politics, Galactic
+
+(the below is an excerpt from the book
+``The Rise and Plateau of Superpower'')
+
+@quotation
+There are many possible scenarios for how galactic
+politics could have played out.  For simplicity,
+we show
+here the simplest cases: the singleton, the bipolar,
+and the three-way multipolar, with particular
+emphasis on the
+bipolar scenario.  They are, respectively, the
+cases where one, two, or three cultures or species
+reach the level of galactic superpower.
+
+Ideally, a singleton of a sane, rational culture
+should arise.  But singletons run a unique risk:
+all the eggs, metaphorically, are in one basket.
+Even if a culture succeeeds at a major galactic
+power
+level, it may not necessarily scale up to the
+galactic superpower level.  And if that single
+culture collapses, we then drop down to one of
+the other cases.  A worse scenario is a
+singleton able to sustain itself --- by
+essentially enslaving or consuming most of its
+sentient population.
+
+A less ideal scenario is a three-way multipolar
+galactic political structure.  This way, even if one
+of the superpowers ends up consuming its own citizens
+to sustain itself, only about a third of the galaxy
+is condemned to live in such a hellhole.  A three-way
+multipolar structure is also quite stable.  Consider
+the case where two superpowers ally to destroy the
+third.  Such an allegiance cannot be a real one;
+later we show the possible Everett probability-paths
+in the Tegmark universe, but for now, consider: if
+one of the allies cooperates and commits its power
+fully to the eradication of the enemy, the other
+may decide to hang back and opportunistically
+betray its ally later on.  Neither can one superpower
+decide to eliminate one of the others while hoping
+for the third to stay neutral; even if it wins, it
+would be in a weakened state, leaving it vulnerable
+to the neutral superpower.
+
+In both the singleton and three-way cases, military
+spending need only be the
+essential minimum: enough to keep its citizens safe
+from each other, without having to worry about some
+other superpower's military.
+
+The least ideal scenario, unfortunately, is exactly
+what we have: two superpowers opposing each other.
+Each superpower perceives victory to be just one
+enemy away.  Each one seeks to overpower its
+opponent, fully aware that the other also seeks to
+do so.  It is a recipe for disaster, since each
+must continually spend on military
+and espionage just to maintain equality with the
+other, reducing
+spending on investments or keeping the populace
+happy.  Each is forced, because of the enormous
+military might of the other, to use indirect means
+of gaining power.
+
+Such indirect means force ``neutral'' minor powers
+to become pawns, as each superpower jostles for
+more effective control over the galaxy.  Each
+minor power eventually decides that openly allying
+with one or the other serves its interests more,
+since allegiance implies that its allied superpower
+will be willing to use its tremendous military
+might to protect it from the other superpower's
+terrifying military superiority.
+
+Into this setting is dropped the technology of
+the A@.P@.D@. bomb and the probability drive
+message drop.  The former magnifies overt
+military power; the latter, covert espionage
+power.  Both serve to @emph{reduce} the options
+available to the superpowers, virtually requiring
+both superpowers to step lightly in conflicts
+with each other.
+
+As fewer options remain for each superpower's
+advancement, each one becomes more static: they
+reach a power plateau where they cannot advance
+further.  The horrible consequence of the
+bipolar galaxy is that this power plateau is
+maintained by ever-increasing military and
+espionage spending, as well as requiring
+ever-increasing diplomatic finesse.
+@end quotation
