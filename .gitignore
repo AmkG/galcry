@@ -25,6 +25,7 @@ stamp-*
 galcry-backend
 galcry-gui
 *.o
+*.a
 .dirstamp
 *.t2d
 
