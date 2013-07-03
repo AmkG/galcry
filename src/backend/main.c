@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include"all_config.h"
 
+#include"stringutils.h"
 #include"ustr.h"
 
 #include<stdio.h>
@@ -92,23 +93,33 @@ static void
 command_loop (void)
 {
   Ustr *cmd;
+  AUstr words;
+
+  austr_init (&words);
+
   while (!quit_flag)
     {
       printf ("galcry> ");
       cmd = get_line ();
       if (cmd == USTR_NULL)
-	{
-	  quit_flag = true;
-	  return;
-	}
+	break;
 
       /* Divide into words.  */
-      /* Search command list.  */
-
-      /* For now echo the command.  */
-      if (!ustr_io_putfileline (&cmd, stdout))
-	abort ();
-
+      wordsplit (&words, cmd);
       ustr_free (cmd);
+      /* For now, display.  */
+      {
+	unsigned int i;
+	for (i = 0; i < austr_length (&words); ++i)
+	  {
+	    printf ("[%u]: ", i);
+	    (void) ustr_io_putfile (austr_wi (&words, i), stdout);
+	    printf ("\n");
+	  }
+      }
+
+      /* Search command list.  */
+      /* TODO.  */
     }
+  austr_deinit (&words);
 }

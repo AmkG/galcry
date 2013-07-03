@@ -22,11 +22,21 @@ galcry_backend_SOURCES =\
 galcry_gui_SOURCES =\
   src/gui/main.c
 
+# useful common sublibraries
+noinst_LIBRARIES =\
+  libstringutils.a
+
+libstringutils_a_SOURCES =\
+  src/stringutils/austr.c\
+  src/stringutils/wordsplit.c
+
+LDADD = $(noinst_LIBRARIES)
+
 # subdirectories
 SUBDIRS = ustr
 
 # ustr support
-LDADD = ustr/libustr.a
+LDADD += ustr/libustr.a
 AM_CPPFLAGS = -I $(srcdir)/ustr
 
 # documentation
