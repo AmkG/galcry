@@ -20,6 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include"ustr.h"
 
+#include<stdint.h>
+
 /*-----------------------------------------------------------------------------
 Array of Strings
 -----------------------------------------------------------------------------*/
@@ -77,5 +79,8 @@ Various utility functions
    Word splitting respects "", which supports C string
    escapes.  */
 void wordsplit (AUstr *parray, Ustr const *string);
+
+/* Gets the hash of the string.  */
+uint32_t stringhash (Ustr const *string);
 
 #endif /* !defined(STRINGUTILS_H_INCLUDED) */

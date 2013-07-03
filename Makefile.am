@@ -28,6 +28,7 @@ noinst_LIBRARIES =\
 
 libstringutils_a_SOURCES =\
   src/stringutils/austr.c\
+  src/stringutils/stringhash.c\
   src/stringutils/wordsplit.c
 
 LDADD = $(noinst_LIBRARIES)
