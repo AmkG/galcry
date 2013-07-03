@@ -22,15 +22,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 struct Command_s
 {
   char const *command;
-  void (*handler) (int argc, char const **argv);
+  void (*handler) (AUstr *command_line);
 };
 typedef struct Command_s Command;
 
-static void quit_command (int argc, char const **argv);
+static void quit_command (AUstr *command_line);
 static bool quit_flag;
 static int quit_value;
 
@@ -53,7 +54,7 @@ main (int argc, char **argv)
 }
 
 static void
-quit_command (int argc, char const **argv)
+quit_command (AUstr *command_line)
 {
   quit_flag = true;
 }
@@ -106,20 +107,33 @@ command_loop (void)
 
       /* Divide into words.  */
       wordsplit (&words, cmd);
-      ustr_free (cmd);
-      /* For now, display.  */
-      {
-	unsigned int i;
-	for (i = 0; i < austr_length (&words); ++i)
-	  {
-	    printf ("[%u]: ", i);
-	    (void) ustr_io_putfile (austr_wi (&words, i), stdout);
-	    printf ("\n");
-	  }
-      }
 
       /* Search command list.  */
-      /* TODO.  */
+      if (austr_length (&words) != 0)
+	{
+	  Command *pc;
+	  bool found;
+	  void (*handler) (AUstr *);
+
+	  ustr_set (&cmd, austr_i (&words, 0));
+	  found = false;
+	  for (pc = command_list; pc->command; ++pc)
+	    {
+	      if (strcmp (ustr_cstr (cmd), pc->command) == 0)
+		{
+		  handler = pc->handler;
+		  found = true;
+		  break;
+		}
+	    }
+
+	  if (!found)
+	    printf ("NG \"%s\"\n", "Unrecognized Command");
+	  else
+	    handler (&words);
+	}
+
+      ustr_sc_free (&cmd);
     }
   austr_deinit (&words);
 }
