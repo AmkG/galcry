@@ -72,7 +72,7 @@ austr_resize (AUstr *parray, unsigned int length)
 	}
 
       for (i = parray->length; i < length; ++i)
-	parray->array[i] = USTR ("");
+	parray->array[i] = ustr_dup_empty ();
       parray->length = length;
     }
 }
