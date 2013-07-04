@@ -37,17 +37,17 @@ typedef struct AUstr_s AUstr;
 void austr_init (AUstr *parray);
 void austr_deinit (AUstr *parray);
 
-static unsigned int
+static inline unsigned int
 austr_length (AUstr const *parray)
 {
   return parray->length;
 }
-static Ustr const *
+static inline Ustr const *
 austr_i (AUstr const *parray, unsigned int i)
 {
   return parray->array[i];
 }
-static Ustr **
+static inline Ustr **
 austr_wi (AUstr *parray, unsigned int i)
 {
   return &parray->array[i];
@@ -60,7 +60,7 @@ void austr_pop (AUstr *parray, Ustr **pstring);
 /* Resize and clear.  Resizing to a larger size creates
    empty strings.  */
 void austr_resize (AUstr *parray, unsigned int length);
-static void
+static inline void
 austr_clear (AUstr *parray)
 {
   austr_resize (parray, 0);

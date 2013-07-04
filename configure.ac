@@ -36,6 +36,7 @@ AM_PROG_AR
 AC_HEADER_STDBOOL
 AC_TYPE_SIZE_T
 AM_PROG_CC_C_O
+AC_C_INLINE
 
 # Checks for library functions.
 AC_FUNC_MALLOC
