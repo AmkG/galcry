@@ -67,6 +67,33 @@ austr_clear (AUstr *parray)
 }
 
 /*-----------------------------------------------------------------------------
+Mappings of Strings to Array of Strings
+-----------------------------------------------------------------------------*/
+
+struct MappingImpl_s;
+
+struct Mapping_s
+{
+  struct MappingImpl_s *pimpl;
+};
+typedef struct Mapping_s Mapping;
+
+void mapping_init (Mapping *pmapping);
+void mapping_deinit (Mapping *pmapping);
+
+/* Insert or delete mappings.  For insertion, VALUE is copied
+   if non-null, otherwise an empty array is mapped.  */
+void mapping_ins (Mapping *pmapping, Ustr const *key, AUstr const *value);
+void mapping_del (Mapping *pmapping, Ustr const *key);
+
+/* Lookup a KEY in the *PMAPPING.  If VALUE is non-null, copy
+   the value into the array of strings.  */
+bool mapping_find (Mapping const *pmapping, Ustr const *key, AUstr *value);
+
+/* Copy all keys in the *PMAPPING.  */
+void mapping_keys (Mapping const *pmapping, AUstr *keys);
+
+/*-----------------------------------------------------------------------------
 Various utility functions
 -----------------------------------------------------------------------------*/
 
