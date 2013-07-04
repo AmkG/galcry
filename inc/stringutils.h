@@ -20,7 +20,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include"ustr.h"
 
-#include<stdint.h>
+#if HAVE_STDINT_H
+# include<stdint.h>
+#endif
+#if !(defined (UINT32_MAX) || defined (uint32_t))
+typedef unsigned int uint32_t;
+#endif /* !(defined (UINT32_MAX) || defined (uint32_t)) */
 
 /*-----------------------------------------------------------------------------
 Array of Strings

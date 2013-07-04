@@ -35,6 +35,7 @@ AM_PROG_AR
 # Checks for typedefs, structures, and compiler characteristics.
 AC_HEADER_STDBOOL
 AC_TYPE_SIZE_T
+AC_TYPE_UINT32_T
 AM_PROG_CC_C_O
 AC_C_INLINE
 

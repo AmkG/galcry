@@ -36,7 +36,13 @@ stringhash (Ustr const *string)
   for (i = 0; i < len; ++i)
     {
       hash = hash ^ ((uint32_t) cstring[i]);
+#     if !(defined (UINT32_MAX) || defined (uint32_t))
+	hash = hash & 0xFFFFFFFF;
+#     endif
       hash = hash * 16777619;
+#     if !(defined (UINT32_MAX) || defined (uint32_t))
+	hash = hash & 0xFFFFFFFF;
+#     endif
     }
 
   return hash;
