@@ -32,6 +32,56 @@ libustr_a_SOURCES = \
   ustr-spn-opt-code.c \
   ustr-srch-opt-code.c \
   ustr-sub-opt-code.c \
-  ustr-utf8-opt-code.c
+  ustr-utf8-opt-code.c \
+  malloc-check.h \
+  ustr-b-code.h \
+  ustr-b.h \
+  ustr-cmp-code.h \
+  ustr-cmp.h \
+  ustr-cmp-internal.h \
+  ustr-cntl-code.h \
+  ustr-cntl.h \
+  ustr-compiler.h \
+  ustr-conf.h \
+  ustr-fmt-code.h \
+  ustr-fmt.h \
+  ustr-fmt-internal.h \
+  ustr.h \
+  ustr-ins-code.h \
+  ustr-ins.h \
+  ustr-ins-internal.h \
+  ustr-io-code.h \
+  ustr-io.h \
+  ustr-io-internal.h \
+  ustr-main-code.h \
+  ustr-main.h \
+  ustr-main-internal.h \
+  ustr-parse-code.h \
+  ustr-parse.h \
+  ustr-pool-code.h \
+  ustr-pool.h \
+  ustr-replace-code.h \
+  ustr-replace.h \
+  ustr-replace-internal.h \
+  ustr-sc-code.h \
+  ustr-sc.h \
+  ustr-sc-internal.h \
+  ustr-set-code.h \
+  ustr-set.h \
+  ustr-set-internal.h \
+  ustr-split-code.h \
+  ustr-split.h \
+  ustr-split-internal.h \
+  ustr-spn-code.h \
+  ustr-spn.h \
+  ustr-srch-code.h \
+  ustr-srch.h \
+  ustr-srch-internal.h \
+  ustr-sub-code.h \
+  ustr-sub.h \
+  ustr-sub-internal.h \
+  ustr-utf8-code.h \
+  ustr-utf8.h \
+  ustr-utf8-internal.h
 
 EXTRA_DIST = COPYING LICENSE_LGPL LICENSE_BSD LICENSE_MIT

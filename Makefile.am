@@ -16,6 +16,10 @@
 
 bin_PROGRAMS = galcry-backend galcry-gui
 
+# All programs use this, so just put it as
+# an extra distributable.
+EXTRA_DIST = inc/all_config.h
+
 galcry_backend_SOURCES =\
   src/backend/main.c \
   src/backend/gamestate.c \
@@ -32,7 +36,8 @@ libstringutils_a_SOURCES =\
   src/stringutils/austr.c\
   src/stringutils/mapping.c\
   src/stringutils/stringhash.c\
-  src/stringutils/wordsplit.c
+  src/stringutils/wordsplit.c\
+  inc/stringutils.h
 
 LDADD = $(noinst_LIBRARIES)
 
@@ -41,14 +46,15 @@ SUBDIRS = ustr
 
 # ustr support
 LDADD += ustr/libustr.a
-AM_CPPFLAGS = -I $(srcdir)/ustr
+AM_CPPFLAGS = -I $(srcdir)/ustr -I $(srcdir)/inc
 
 # documentation
 info_TEXINFOS = doc/galcry.texi
 doc_galcry_TEXINFOS = \
   doc/galcry/intro.texi \
   doc/galcry/licenses.texi \
-  doc/galcry/fdl.texi
+  doc/galcry/fdl.texi \
+  doc/galcry/gpl.texi
 
 TEXI2DVI = texi2dvi --tidy
 
