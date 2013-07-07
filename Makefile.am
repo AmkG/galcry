@@ -17,7 +17,9 @@
 bin_PROGRAMS = galcry-backend galcry-gui
 
 galcry_backend_SOURCES =\
-  src/backend/main.c
+  src/backend/main.c \
+  src/backend/gamestate.c \
+  inc/backend/gamestate.h
 
 galcry_gui_SOURCES =\
   src/gui/main.c
