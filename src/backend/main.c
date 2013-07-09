@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include"all_config.h"
 
+#include"cmdline.h"
 #include"stringutils.h"
 #include"ustr.h"
 
@@ -48,7 +49,16 @@ main (int argc, char **argv)
   quit_flag = false;
   quit_value = 0;
 
+  cmdline_init (argc, argv,
+		"galcry-backend",
+		"Copyright (C) 2013 Alan Manuel K. Gloria",
+		"Written by Alan Manuel K. Gloria",
+		"Launches the Galactic Crisis core engine "
+		"(use `galcry-gui' to run the game).");
+
   command_loop ();
+
+  cmdline_deinit ();
 
   return quit_value;
 }

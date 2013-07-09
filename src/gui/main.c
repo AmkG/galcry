@@ -17,8 +17,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include"all_config.h"
 
+#include"cmdline.h"
+
 int
 main (int argc, char **argv)
 {
+  cmdline_init (argc, argv,
+		"galcry-backend",
+		"Copyright (C) 2013 Alan Manuel K. Gloria",
+		"Written by Alan Manuel K. Gloria",
+		"Launches the Galactic Crisis main GUI program.");
+
+  cmdline_deinit ();
   return 0;
 }
