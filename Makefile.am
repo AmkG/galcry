@@ -30,7 +30,8 @@ galcry_gui_SOURCES =\
 
 # useful common sublibraries
 noinst_LIBRARIES =\
-  libstringutils.a
+  libstringutils.a\
+  libcmdline.a
 
 libstringutils_a_SOURCES =\
   src/stringutils/austr.c\
@@ -38,6 +39,13 @@ libstringutils_a_SOURCES =\
   src/stringutils/stringhash.c\
   src/stringutils/wordsplit.c\
   inc/stringutils.h
+
+libcmdline_a_SOURCES =\
+  src/cmdline.c\
+  inc/cmdline.h
+libcmdline_a_CPPFLAGS =\
+  -DPKGDATADIR="\"$(pkgdatadir)\""\
+  -DBINDIR="\"$(bindir)\""
 
 LDADD = $(noinst_LIBRARIES)
 
