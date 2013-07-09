@@ -45,7 +45,8 @@ libcmdline_a_SOURCES =\
   inc/cmdline.h
 libcmdline_a_CPPFLAGS =\
   -DPKGDATADIR="\"$(pkgdatadir)\""\
-  -DBINDIR="\"$(bindir)\""
+  -DBINDIR="\"$(bindir)\"" \
+  $(AM_CPPFLAGS)
 
 LDADD = $(noinst_LIBRARIES)
 
@@ -64,7 +65,7 @@ doc_galcry_TEXINFOS = \
   doc/galcry/fdl.texi \
   doc/galcry/gpl.texi
 
-TEXI2DVI = texi2dvi --tidy
+TEXI2DVI = texi2dvi --clean
 
 # needed support
 ACLOCAL_AMFLAGS = -I m4
