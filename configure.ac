@@ -29,6 +29,17 @@ AC_PROG_RANLIB
 AM_PROG_AR
 
 # Checks for libraries.
+PKG_CHECK_MODULES([allegro4], [allegro],,[#else
+  AC_PATH_TOOL([ALLEGRO_CONFIG], [allegro-config], [no])
+  AS_IF([test x$ALLEGRO_CONFIG = xno],[#then
+    AC_MSG_ERROR([
+Cannot find allegro installation by either allegro-config or pkg-config.
+])
+  ],[#else
+    allegro4_CFLAGS=`allegro-config --cflags`
+    allegro4_LIBS=`allegro-config --libs`
+  ])
+])
 
 # Checks for header files.
 

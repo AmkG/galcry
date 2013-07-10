@@ -27,6 +27,8 @@ galcry_backend_SOURCES =\
 
 galcry_gui_SOURCES =\
   src/gui/main.c
+galcry_gui_CFLAGS = $(allegro4_CFLAGS)
+galcry_gui_LDADD = $(allegro4_LIBS) $(LDADD)
 
 # useful common sublibraries
 noinst_LIBRARIES =\
