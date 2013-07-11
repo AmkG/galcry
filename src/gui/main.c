@@ -18,40 +18,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include"all_config.h"
 
 #include"cmdline.h"
+#include"gui/utils.h"
 #include"ustr.h"
 
 #include<allegro.h>
-
-int res_width;
-int res_height;
-int res_depth;
-
-void
-gui_exit (int rc)
-{
-  (void) set_gfx_mode (GFX_TEXT, 0, 0, 0, 0);
-  cmdline_deinit ();
-  allegro_exit ();
-  exit (rc);
-}
-void
-gui_abort (Ustr **ps)
-{
-  (void) set_gfx_mode (GFX_TEXT, 0, 0, 0, 0);
-  if (ps && *ps)
-    {
-      allegro_message ("Galactic Crisis GUI Abort!\nError: %s", 
-		       ustr_cstr (*ps));
-      ustr_sc_free (ps);
-    }
-  else
-    {
-      allegro_message ("Galactic Crisis GUI Abort!");
-    }
-  cmdline_deinit ();
-  allegro_exit ();
-  exit (2);
-}
 
 int
 main (int argc, char **argv)

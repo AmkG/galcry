@@ -26,7 +26,9 @@ galcry_backend_SOURCES =\
   inc/backend/gamestate.h
 
 galcry_gui_SOURCES =\
-  src/gui/main.c
+  src/gui/main.c\
+  src/gui/utils.c\
+  inc/gui/utils.h
 galcry_gui_CFLAGS = $(allegro4_CFLAGS)
 galcry_gui_LDADD = $(allegro4_LIBS) $(LDADD)
 
