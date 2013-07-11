@@ -27,7 +27,9 @@ galcry_backend_SOURCES =\
 
 galcry_gui_SOURCES =\
   src/gui/main.c\
+  src/gui/loop.c\
   src/gui/utils.c\
+  inc/gui/loop.h\
   inc/gui/utils.h
 galcry_gui_CFLAGS = $(allegro4_CFLAGS)
 galcry_gui_LDADD = $(allegro4_LIBS) $(LDADD)
