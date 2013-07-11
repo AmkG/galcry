@@ -18,6 +18,40 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include"all_config.h"
 
 #include"cmdline.h"
+#include"ustr.h"
+
+#include<allegro.h>
+
+int res_width;
+int res_height;
+int res_depth;
+
+void
+gui_exit (int rc)
+{
+  (void) set_gfx_mode (GFX_TEXT, 0, 0, 0, 0);
+  cmdline_deinit ();
+  allegro_exit ();
+  exit (rc);
+}
+void
+gui_abort (Ustr **ps)
+{
+  (void) set_gfx_mode (GFX_TEXT, 0, 0, 0, 0);
+  if (ps && *ps)
+    {
+      allegro_message ("Galactic Crisis GUI Abort!\nError: %s", 
+		       ustr_cstr (*ps));
+      ustr_sc_free (ps);
+    }
+  else
+    {
+      allegro_message ("Galactic Crisis GUI Abort!");
+    }
+  cmdline_deinit ();
+  allegro_exit ();
+  exit (2);
+}
 
 int
 main (int argc, char **argv)
@@ -27,7 +61,41 @@ main (int argc, char **argv)
 		"Copyright (C) 2013 Alan Manuel K. Gloria",
 		"Written by Alan Manuel K. Gloria",
 		"Launches the Galactic Crisis main GUI program.");
+  if (allegro_init () != 0)
+    {
+      printf ("%s: Unable to launch allegro!\n", argv[0]);
+      printf ("%s: Error: %s\n", argv[0], allegro_error);
+      cmdline_deinit ();
+      exit (1);
+    }
 
-  cmdline_deinit ();
-  return 0;
+  if (get_desktop_resolution (&res_width, &res_height) != 0)
+    {
+      res_width = 640;
+      res_height = 480;
+    }
+  res_depth = desktop_color_depth ();
+  if (res_depth == 0 || res_depth == 8)
+    {
+      res_depth = 32;
+    }
+
+  set_color_depth (res_depth);
+  if (set_gfx_mode (GFX_AUTODETECT_FULLSCREEN, res_width, res_height, 0, 0)
+      != 0)
+    {
+      printf ("%s: Allegro unable to switch to %d x %d screen.\n", argv[0],
+	      res_width, res_height);
+      printf ("%s: Error: %s\n", argv[0], allegro_error);
+      allegro_message ("%s: Allegro unable to switch to %d x %d screen.\n"
+		       "Error: %s.",
+		       argv[0], res_width, res_height, allegro_error);
+      cmdline_deinit ();
+      exit (1);
+    }
+
+  gui_exit (0);
 }
+/* *INDENT-OFF* */
+END_OF_MAIN ()
+/* *INDENT-ON* */
