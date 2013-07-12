@@ -27,7 +27,7 @@ int
 main (int argc, char **argv)
 {
   cmdline_init (argc, argv,
-		"galcry-backend",
+		"galcry-gui",
 		"Copyright (C) 2013 Alan Manuel K. Gloria",
 		"Written by Alan Manuel K. Gloria",
 		"Launches the Galactic Crisis main GUI program.");
