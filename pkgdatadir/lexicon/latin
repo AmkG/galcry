@@ -1,0 +1,54 @@
+# pkgdata/lexicon/latin - Latin sample text
+# Copyright (C) 2013 Alan Manuel K. Gloria
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Lines beginning in # are ignored.  # cannot be used
+# after non-comment text.  Use words only, no
+# punctuation.
+
+quidquid latine dictum sit altum viditur
+
+quis custodiet ipsos custodies
+
+ars longa
+vita brevis
+occasio praeceps
+experimentum periculosum
+iudicium difficile
+
+non est salvatori salvator
+neque defensori dominus
+nec pater nec mater
+nihil supernum
+
+per aspera ad astra
+
+entia non sunt multiplicanda praeter necessitatem
+
+sapienti sat
+
+lupus non timet canem latrantem
+
+excusatio non petita accusatio manifesta
+
+exercitus sine duce corpus est sine spiritu
+
+legi intellexi et condemnavi
+
+mobilis in mobili
+
+nanos gigantum humeris insidentes
+
+quod erat demonstrandum

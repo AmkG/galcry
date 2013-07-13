@@ -57,7 +57,7 @@ libcmdline_a_CPPFLAGS =\
 LDADD = $(noinst_LIBRARIES)
 
 # subdirectories
-SUBDIRS = ustr
+SUBDIRS = ustr pkgdatadir
 
 # ustr support
 LDADD += ustr/libustr.a

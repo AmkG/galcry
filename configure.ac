@@ -53,5 +53,5 @@ AC_C_INLINE
 # Checks for library functions.
 AC_FUNC_MALLOC
 
-AC_CONFIG_FILES([Makefile ustr/Makefile])
+AC_CONFIG_FILES([Makefile ustr/Makefile pkgdatadir/Makefile])
 AC_OUTPUT
