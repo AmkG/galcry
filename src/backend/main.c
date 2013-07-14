@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include"all_config.h"
 
+#include"backend/lexicon.h"
 #include"cmdline.h"
 #include"stringutils.h"
 #include"ustr.h"
@@ -38,6 +39,8 @@ static int quit_value;
 
 Command command_list[] = {
   {"quit", &quit_command},
+  {"lexicons", &lexicon_lexicons_command},
+  {"lexicon", &lexicon_lexicon_command},
   {0, 0}
 };
 
@@ -55,9 +58,11 @@ main (int argc, char **argv)
 		"Written by Alan Manuel K. Gloria",
 		"Launches the Galactic Crisis core engine "
 		"(use `galcry-gui' to run the game).");
+  lexicon_init ();
 
   command_loop ();
 
+  lexicon_deinit ();
   cmdline_deinit ();
 
   return quit_value;

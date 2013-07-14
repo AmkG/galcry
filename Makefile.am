@@ -23,7 +23,9 @@ EXTRA_DIST = inc/all_config.h
 galcry_backend_SOURCES =\
   src/backend/main.c \
   src/backend/gamestate.c \
-  inc/backend/gamestate.h
+  src/backend/lexicon.c \
+  inc/backend/gamestate.h \
+  inc/backend/lexicon.h
 
 galcry_gui_SOURCES =\
   src/gui/main.c\
