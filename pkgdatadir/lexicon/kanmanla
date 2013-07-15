@@ -1,4 +1,4 @@
-# Makefile.am - Compilation control file for Galactic Crisis data
+# pkgdata/lexicon/kanmanla - Alien language sample
 # Copyright (C) 2013 Alan Manuel K. Gloria
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,21 +14,40 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-CLEANFILES =
+# See lexicon/latin for general rules for language samples
 
-lexicons =\
-  lexicon/kanmanla\
-  lexicon/gismu\
-  lexicon/latin
+kanmanla
+mankanla
+hanmanla
+manhanla
+kanhanla
+tanhanla
+tankanla
+dantanla
+tandanla
+ganmanla
+kanganla
 
-nobase_dist_pkgdata_DATA =\
-  $(lexicons)
+kongonla
+gonra
+tonra
+donra
+gonhanla
+hangonra
+hantonra
+handonra
 
-nobase_pkgdata_DATA =\
-  lexicons
+banla
+panla
+benla
+penla
+bengonra
+penkonra
 
-lexicons : Makefile
-	rm -f lexicons
-	for file in $(lexicons); do\
-	  echo $$file | sed -e 's*lexicon/**' >> lexicons; done
-CLEANFILES += lexicons
+donbentantonpenya
+kanmanya
+gonkonya
+manhanya
+tanya
+donya
+penbendantonya
