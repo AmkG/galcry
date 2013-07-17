@@ -19,7 +19,8 @@ CLEANFILES =
 lexicons =\
   lexicon/kanmanla\
   lexicon/gismu\
-  lexicon/latin
+  lexicon/latin\
+  lexicon/tagalog
 
 nobase_dist_pkgdata_DATA =\
   $(lexicons)

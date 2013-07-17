@@ -1,0 +1,57 @@
+# pkgdata/lexicon/tagalog - Tagalog language sample
+# Copyright (C) 2013 Alan Manuel K. Gloria
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# See lexicon/latin for general rules for language samples
+
+# Tagalog needs lots of short two-letter words as grammar, which
+# we elide here in order to prevent extremely short words from
+# being generated.
+#
+# Also, most of the below are largely nonsense.
+
+ang buhay sadyang ganyan
+
+habang may buhay
+
+kamukha
+noong tayo bata
+ang galing mong sumayaw
+
+talaga lang
+
+hindi kayang tanggapin
+mawawala akin
+
+ano ito
+kinalat niya
+
+angat iba
+ang nangingibabaw
+sangkatauhan
+
+ang gumawa malalagot
+tulong kailangan upang managalog
+ako ang sumagip kanino
+
+ano isang kataga
+
+bakit nga ikaw ang nasa aking alaala
+
+ayokong makulit
+saan tayo kakain
+inaanyayaan nila tayo
+maari ngang andito bumagyo
+mapagkunwaring pagkakaibigan
