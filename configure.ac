@@ -34,10 +34,27 @@ PKG_CHECK_MODULES([allegro4], [allegro],,[#else
   AS_IF([test x$ALLEGRO_CONFIG = xno],[#then
     AC_MSG_ERROR([
 Cannot find allegro installation by either allegro-config or pkg-config.
+The pkg-config utility reported the following errors:
+
+$allegro4_PKG_ERRORS
 ])
   ],[#else
-    allegro4_CFLAGS=`allegro-config --cflags`
-    allegro4_LIBS=`allegro-config --libs`
+    allegro4_CFLAGS=`$ALLEGRO_CONFIG --cflags`
+    allegro4_LIBS=`$ALLEGRO_CONFIG --libs`
+  ])
+])
+PKG_CHECK_MODULES([freetype2], [freetype2],,[#else
+  AC_PATH_TOOL([FREETYPE_CONFIG], [freetype-config], [no])
+  AS_IF([test x$FREETYPE_CONFIG = xno],[#then
+    AC_MSG_ERROR([
+Cannot find freetype2 installation by either freetype-config or pkg-config.
+The pkg-config utility reported the following errors:
+
+$freetype2_PKG_ERRORS
+])
+  ],[#else
+    freetype2_CFLAGS=`$FREETYPE_CONFIG --cflags`
+    freetype2_LIBS=`$FREETYPE_CONFIG --libs`
   ])
 ])
 
