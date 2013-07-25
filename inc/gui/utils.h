@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef GUI_UTILITIES_H_INCLUDED
 #define GUI_UTILITIES_H_INCLUDED
 
+#include "gui/a4f.h"
 #include "ustr.h"
 
 void gui_exit (int rc);
@@ -26,6 +27,8 @@ void gui_abort (Ustr **ps);
 extern int res_width;
 extern int res_height;
 extern int res_depth;
+extern A4F FreeSansNormal;
+extern A4F FreeSansBig;
 
 
 #endif /* !defined (GUI_UTILITIES_H_INCLUDED) */

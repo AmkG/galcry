@@ -26,14 +26,27 @@ int res_width;
 int res_height;
 int res_depth;
 
-void
-gui_exit (int rc)
+A4F FreeSansNormal = 0;
+A4F FreeSansBig = 0;
+
+static void
+common_gui_shutdown (int rc)
 {
-  (void) set_gfx_mode (GFX_TEXT, 0, 0, 0, 0);
+  if (FreeSansNormal)
+    a4f_destroy (FreeSansNormal);
+  if (FreeSansBig)
+    a4f_destroy (FreeSansBig);
   a4f_shutdown ();
   cmdline_deinit ();
   allegro_exit ();
   exit (rc);
+}
+
+void
+gui_exit (int rc)
+{
+  (void) set_gfx_mode (GFX_TEXT, 0, 0, 0, 0);
+  common_gui_shutdown (rc);
 }
 void
 gui_abort (Ustr **ps)
@@ -49,8 +62,5 @@ gui_abort (Ustr **ps)
     {
       allegro_message ("Galactic Crisis GUI Abort!");
     }
-  a4f_shutdown ();
-  cmdline_deinit ();
-  allegro_exit ();
-  exit (2);
+  common_gui_shutdown (2);
 }
