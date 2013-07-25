@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include"all_config.h"
 
+#include"gui/a4f.h"
 #include"gui/utils.h"
 
 #include<allegro.h>
@@ -29,6 +30,7 @@ void
 gui_exit (int rc)
 {
   (void) set_gfx_mode (GFX_TEXT, 0, 0, 0, 0);
+  a4f_shutdown ();
   cmdline_deinit ();
   allegro_exit ();
   exit (rc);
@@ -47,6 +49,7 @@ gui_abort (Ustr **ps)
     {
       allegro_message ("Galactic Crisis GUI Abort!");
     }
+  a4f_shutdown ();
   cmdline_deinit ();
   allegro_exit ();
   exit (2);

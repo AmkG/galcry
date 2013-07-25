@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include"all_config.h"
 
 #include"cmdline.h"
+#include"gui/a4f.h"
 #include"gui/loop.h"
 #include"gui/utils.h"
 #include"ustr.h"
@@ -30,6 +31,8 @@ typedef struct SIMPLE_s
   unsigned int mx;
   unsigned int my;
   bool quit_flag;
+  A4F font;
+  A4F font2;
   unsigned int x;
   unsigned int y;
 } SIMPLE;
@@ -79,10 +82,12 @@ simple_refresh (BITMAP *target, void const *vs)
 {
   SIMPLE const *s;
   int white;
+  int cyan;
 
   set_color_depth (bitmap_color_depth (target));
   s = vs;
   white = makecol (255, 255, 255);
+  cyan = makecol (0, 255, 255);
 
   clear_to_color (target, makecol (0,0,0));
 
@@ -90,6 +95,12 @@ simple_refresh (BITMAP *target, void const *vs)
   fastline (target, res_width - 1, 0, s->x, s->y, white);
   fastline (target, 0, res_height - 1, s->x, s->y, white);
   fastline (target, res_width - 1, res_height - 1, s->x, s->y, white);
+
+  (void) a4f_textout (target, target->w / 2, target->h / 2, cyan,
+		      s->font, "galcry-gui VAV");
+  (void) a4f_textout (target, target->w / 4, target->h / 4, cyan,
+		      s->font2, "galcry-gui VAV");
+  fastline (target, 0, 0, target->w / 2, target->h / 2, cyan);
 }
 
 int
@@ -110,6 +121,16 @@ main (int argc, char **argv)
   (void) install_keyboard ();
   (void) install_mouse ();
   (void) install_timer ();
+
+  if (a4f_init () != 0)
+    {
+      printf ("%s: Unable to initialize font system.\n", argv[0]);
+      printf ("%s: Error: %s\n", argv[0], allegro_error);
+      allegro_message ("%s: Unable to initialize font system.\nError: %s",
+		       argv[0], allegro_error);
+      cmdline_deinit ();
+      exit (1);
+    }
 
   if (get_desktop_resolution (&res_width, &res_height) != 0)
     {
@@ -132,16 +153,36 @@ main (int argc, char **argv)
       allegro_message ("%s: Allegro unable to switch to %d x %d screen.\n"
 		       "Error: %s.",
 		       argv[0], res_width, res_height, allegro_error);
+      a4f_shutdown ();
       cmdline_deinit ();
       exit (1);
     }
 
   {
     SIMPLE s;
+    Ustr *fname;
+
     s.quit_flag = false;
     s.x = 0;
     s.y = 0;
+
+    fname = ustr_dup (cmdline_pkgdatadir ());
+    if (!ustr_add_cstr (&fname, "/FreeSans.otf"))
+      gui_abort (0);
+    s.font = a4f_file_load (ustr_cstr (fname), 0);
+    ustr_sc_free (&fname);
+    if (!s.font)
+      {
+	fname = ustr_dup_cstr (allegro_error);
+        gui_abort (&fname);
+      }
+    s.font2 = a4f_copy (s.font);
+    a4f_set_height_pixels (s.font2, 32);
+
     loop_execute (&s, simple_refresh, simple_input, simple_logic);
+
+    a4f_destroy (s.font);
+    a4f_destroy (s.font2);
   }
 
   gui_exit (0);

@@ -29,12 +29,14 @@ galcry_backend_SOURCES =\
 
 galcry_gui_SOURCES =\
   src/gui/main.c\
+  src/gui/a4f.c\
   src/gui/loop.c\
   src/gui/utils.c\
+  inc/gui/a4f.h\
   inc/gui/loop.h\
   inc/gui/utils.h
-galcry_gui_CFLAGS = $(allegro4_CFLAGS)
-galcry_gui_LDADD = $(allegro4_LIBS) $(LDADD)
+galcry_gui_CFLAGS = $(allegro4_CFLAGS) $(freetype2_CFLAGS)
+galcry_gui_LDADD = $(allegro4_LIBS) $(freetype2_LIBS) $(LDADD)
 
 # useful common sublibraries
 noinst_LIBRARIES =\
