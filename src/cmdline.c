@@ -98,7 +98,7 @@ cmdline_init (int argc, char **argv,
 	{
 	  unsigned int off;
 	  off = strlen ("--bindir=");
-	  if (!ustr_set_subustr (&pkgdatadir, opt,
+	  if (!ustr_set_subustr (&bindir, opt,
 				 off + 1, ustr_len (opt) - off))
 	    abort ();
 	}
