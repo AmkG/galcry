@@ -23,7 +23,8 @@ lexicons =\
   lexicon/tagalog
 
 nobase_dist_pkgdata_DATA =\
-  $(lexicons)
+  $(lexicons) \
+  FreeSans.otf
 
 nobase_pkgdata_DATA =\
   lexicons
