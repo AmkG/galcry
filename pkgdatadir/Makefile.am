@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-CLEANFILES =
+DISTCLEANFILES =
 
 lexicons =\
   lexicon/kanmanla\
@@ -24,13 +24,11 @@ lexicons =\
 
 nobase_dist_pkgdata_DATA =\
   $(lexicons) \
+  lexicons \
   FreeSans.otf
-
-nobase_pkgdata_DATA =\
-  lexicons
 
 lexicons : Makefile
 	rm -f lexicons
 	for file in $(lexicons); do\
 	  echo $$file | sed -e 's*lexicon/**' >> lexicons; done
-CLEANFILES += lexicons
+DISTCLEANFILES += lexicons
