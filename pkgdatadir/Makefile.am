@@ -27,8 +27,7 @@ nobase_dist_pkgdata_DATA =\
   lexicons \
   FreeSans.otf
 
-lexicons : Makefile
+lexicons : Makefile.am
 	rm -f lexicons
 	for file in $(lexicons); do\
 	  echo $$file | sed -e 's*lexicon/**' >> lexicons; done
-DISTCLEANFILES += lexicons
