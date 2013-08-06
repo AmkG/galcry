@@ -44,10 +44,15 @@ Free Documentation License''.
 * Introduction::                  Introduction to the universe of
                                     Galactic Crisis
 
+* Galactic Politics::             War and peace in the galactic stage.
+
 * Licenses::                      Licenses.
 @end menu
 
 @include galcry/intro.texi
+
+@include galcry/galpol.texi
+
 @include galcry/licenses.texi
 
 @bye

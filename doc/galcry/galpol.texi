@@ -1,0 +1,11 @@
+@node Galactic Politics
+@chapter Galactic Politics
+@cindex Galactic Politics
+
+@quotation
+``What made war inevitable
+was the growth of Athenian power
+and the fear which this caused
+in Sparta.'' -- Thucydides
+@end quotation
+
