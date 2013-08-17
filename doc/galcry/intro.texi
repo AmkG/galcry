@@ -21,7 +21,7 @@ hand.
 
 @menu
 * A.P.D. ::                        The main technological achievement.
-* Galactic Politics ::             The two superpowers.
+* Galactic Superpowers ::          The two superpowers.
 @end menu
 
 @node A.P.D.
@@ -99,10 +99,10 @@ but a tool of
 peace.
 @end quotation
 
-@node Galactic Politics
-@section Galactic Politics
-@cindex Galactic Politics
-@cindex Politics, Galactic
+@node Galactic Superpowers
+@section Galactic Superpowers
+@cindex Galactic Superpowers
+@cindex Superpowers, Galactic
 
 (the below is an excerpt from the book
 ``The Rise and Plateau of Superpower'')
