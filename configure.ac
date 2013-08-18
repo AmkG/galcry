@@ -25,8 +25,11 @@ AM_INIT_AUTOMAKE([gnu check-news subdir-objects std-options silent-rules])
 
 # Checks for programs.
 AC_PROG_CC
+AC_PROG_CXX
 AC_PROG_RANLIB
 AM_PROG_AR
+
+AC_LANG([C])
 
 # Checks for libraries.
 PKG_CHECK_MODULES([allegro4], [allegro],,[#else
@@ -58,6 +61,22 @@ $freetype2_PKG_ERRORS
   ])
 ])
 
+# GMP is needed to properly link CGAL.
+AC_CHECK_LIB([gmp],[__gmpz_init],,[#fail
+AC_MSG_ERROR([GNU MP not found])
+])
+# On my system CGAL needs to have checking disabled
+# to properly link using autotools.
+CPPFLAGS="${CPPFLAGS} -DCGAL_NO_ASSERTIONS -DCGAL_NO_PRECONDITIONS -DCGAL_NO_POSTCONDITIONS"
+AC_LANG([C++])
+AX_LIB_CGAL_CORE(,[#fail
+  AC_MSG_ERROR([
+Cannot find CGAL installation.
+  ])
+])
+AC_LANG([C])
+
+
 # Checks for header files.
 
 # Checks for typedefs, structures, and compiler characteristics.
@@ -66,6 +85,9 @@ AC_TYPE_SIZE_T
 AC_TYPE_UINT32_T
 AM_PROG_CC_C_O
 AC_C_INLINE
+AC_LANG([C++])
+AC_PROG_CXX_C_O
+AC_LANG([C])
 
 # Checks for library functions.
 AC_FUNC_MALLOC

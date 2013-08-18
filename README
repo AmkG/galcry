@@ -1,0 +1,17 @@
+
+Galactic Crisis
+===============
+
+Galactic Crisis is a game of brinkmanship, set in a universe where two
+powerful alien races hold enough firepower to render the galaxy lifeless
+several times over.  It is inspired by Cris Crawford's Balance of Power.
+
+Requirements
+------------
+
+The following libraries should be installed on your system (these are the
+Debian names for the packages):
+
+    liballegro4.2-dev or liballegro4.4-dev
+    libfreetype6-dev (other Freetype2 versions may work also)
+    libcgal-dev (tested with libcgal8)

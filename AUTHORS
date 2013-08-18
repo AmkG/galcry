@@ -6,3 +6,15 @@ Alan Manuel K. Gloria
 James Antill
 - Ustr Library
 - All .c and .h files in ustr/ sub-directory.
+
+---
+
+Thomas Porschberg <thomas@randspringer.de>
+Peter Adolphs
+- AX_BOOST_BASE autoconf macro
+- m4/ax_boost_base.m4
+
+Sebastian Hegler <sebastian.hegler@tu-dresden.de>
+- AX_LIB_CGAL_CORE autoconf macro
+- m4/ax_lib_cgal_core.m4
+
