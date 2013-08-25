@@ -24,9 +24,11 @@ galcry_backend_SOURCES =\
   src/backend/main.c \
   src/backend/gamestate.c \
   src/backend/lexicon.c \
+  src/backend/lloyd.c \
   src/backend/voronoi.cxx \
   inc/backend/gamestate.h \
   inc/backend/lexicon.h \
+  inc/backend/lloyd.h \
   inc/backend/voronoi.h
 galcry_backend_CPPFLAGS = $(CGAL_CPPFLAGS)
 galcry_backend_LDADD = $(CGAL_LDFLAGS) $(LDADD)
