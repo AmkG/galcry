@@ -67,13 +67,23 @@ AC_MSG_ERROR([GNU MP not found])
 ])
 # On my system CGAL needs to have checking disabled
 # to properly link using autotools.
+SAVED_CPPFLAGS=$CPPFLAGS
 CPPFLAGS="${CPPFLAGS} -DCGAL_NO_ASSERTIONS -DCGAL_NO_PRECONDITIONS -DCGAL_NO_POSTCONDITIONS"
+export CPPFLAGS
 AC_LANG([C++])
+AX_BOOST_BASE(,,[#fail
+  AC_MSG_ERROR([
+Cannot find Boost installation.
+  ])
+])
 AX_LIB_CGAL_CORE(,[#fail
   AC_MSG_ERROR([
 Cannot find CGAL installation.
   ])
 ])
+# Restore CPPFLAGS
+CPPFLAGS=$SAVED_CPPFLAGS
+export CPPFLAGS
 AC_LANG([C])
 
 

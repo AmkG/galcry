@@ -30,8 +30,8 @@ galcry_backend_SOURCES =\
   inc/backend/lexicon.h \
   inc/backend/lloyd.h \
   inc/backend/voronoi.h
-galcry_backend_CPPFLAGS = $(CGAL_CPPFLAGS)
-galcry_backend_LDADD = $(CGAL_LDFLAGS) $(LDADD)
+galcry_backend_CPPFLAGS = $(CGAL_CPPFLAGS) $(BOOST_CPPFLAGS) $(AM_CPPFLAGS)
+galcry_backend_LDADD = $(CGAL_LDFLAGS) $(BOOST_LDFLAGS) $(LDADD)
 
 galcry_gui_SOURCES =\
   src/gui/main.c\

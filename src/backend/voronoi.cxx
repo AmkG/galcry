@@ -17,6 +17,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include"all_config.h"
 
+/* Needed on my system, the installed library apparently does not
+   even incude definitions for these.  */
+#define CGAL_NO_ASSERTIONS
+#define CGAL_NO_PRECONDITIONS
+#define CGAL_NO_POSTCONDITIONS
+
 #include"backend/voronoi.h"
 
 #include<assert.h>
